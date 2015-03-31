@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Notam data:</strong>
+  <%= @not_am.notam_data %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @not_am.text %>
+</p>
+
+<%= link_to 'Edit', edit_not_am_path(@not_am) %> |
+<%= link_to 'Back', not_ams_path %>

@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Not Ams</h1>
+
+<table border="0"  width="100%">
+  <thead>
+    <tr>
+      <th width="20" bgcolor="#0000FF">Service</th>
+      <th width="20" bgcolor="#0000FF">Mon </th>
+      <th width="20" bgcolor="#0000FF">Tue </th>
+      <th width="20" bgcolor="#0000FF">Wed </th>
+      <th width="20" bgcolor="#0000FF">Thurs </th>
+      <th width="20" bgcolor="#0000FF">Fri </th>
+      <th width="20" bgcolor="#0000FF">Sat </th>
+      <th width="20" bgcolor="#0000FF">Sun </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% count = 0 %>
+    <% @notam_hash.each do |key, value| %>
+      <%  value.each do |serv_key, times|%>
+        <tr>
+          <% if count % 2 == 0 %>
+            <td align="center" bgcolor="#A9A9F5">
+            <% else %>
+            <td align="center" bgcolor="#E0E6F8">
+            <% end %>
+            <%= serv_key %></td>
+          <% times.each do |val| %>
+            <% if count % 2 == 0 %>
+              <td align="center" bgcolor="#A9A9F5">
+              <% else %>
+              <td align="center" bgcolor="#E0E6F8">
+              <% end %>
+              <%= val %></td>
+          <% end %>
+        </tr>
+      <% end %>
+      <% count = count+1 %>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%#= link_to 'New Not am', new_not_am_path %>

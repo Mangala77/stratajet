@@ -1,0 +1,21 @@
+<%= form_for(@not_am) do |f| %>
+  <% if @not_am.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@not_am.errors.count, "error") %> prohibited this not_am from being saved:</h2>
+
+      <ul>
+      <% @not_am.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :notam_data %><br>
+    <%= f.text_field :notam_data %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
